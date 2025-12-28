@@ -25,7 +25,7 @@ const HistoryList = () => {
     <section className="max-w-7xl mx-auto my-6">
       <div>
         {historyList.length === 0 ? (
-          <div className="bg-blue-100 border-1 shadow-xl border-dashed border-gray-400 rounded text-center py-6 space-y-2">
+          <div className="bg-blue-100 border shadow-xl border-dashed border-gray-400 rounded text-center py-6 space-y-2">
             <div className="flex justify-center items-center ">
               <Image src="/aiDoctor.png" alt="ai doctor" width={160} height={160}  className="w-[200px] h-auto"/>
             </div>
