@@ -8,16 +8,27 @@ import MedicalTeam from "@/components/MedicalTeam/MedicalTeam";
 import MedicalTreatment from "@/components/MedicalTreatment/MedicalTreatment";
 import Navbar from "@/components/Navbar/Navbar";
 import ScrollingText from "@/components/ScrollingText/ScrollingText";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollSmoother, ScrollTrigger } from "gsap/all";
 
-
+gsap.registerPlugin(ScrollTrigger , ScrollSmoother);
 export default function Home() {
+
+    useGSAP(()=>{
+    ScrollSmoother.create({
+      smooth:3,
+      effects:true
+    })
+  })
+
   return (
   <section>
       <div className="fixed top-0 left-0 w-full z-50">
         <Navbar />
       </div>
-      <div>
-        <div className="pt-16">
+      <div id="smooth-wrapper" className="pt-[80px] ">
+        <div id="smooth-content">
           <Banner/>
           <HealthSolutions/>
           <CountUpSection />
