@@ -36,11 +36,11 @@ const Modal = ({ open, setOpen }) => {
   };
 
   //handle cancel------------->
-  const handleCancel=()=>{
-     setOpen(false)
-     setSuggestDoctor([])
-     setNote(null)
-  }
+  const handleCancel = () => {
+    setOpen(false);
+    setSuggestDoctor([]);
+    setNote(null);
+  };
 
   return (
     // <div>
@@ -61,7 +61,7 @@ const Modal = ({ open, setOpen }) => {
     //           <div className="grid grid-cols-2 gap-2 ">
     //             {suggestDoctor.map((doctor, index) => (
     //               <div key={doctor._id}>
-    //                 <SuggestDoctorCard
+    //                 <
     //                   doctor={doctor}
     //                   index={index}
     //                   setSelectedDoctor={setSelectedDoctor}
@@ -117,7 +117,6 @@ const Modal = ({ open, setOpen }) => {
       {open && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-[500px] relative">
-            
             {/* close */}
             <button
               onClick={() => setOpen(false)}
@@ -159,7 +158,7 @@ const Modal = ({ open, setOpen }) => {
                 <div className="grid grid-cols-2 gap-2">
                   {suggestDoctor.map((doctor) => (
                     <SuggestDoctorCard
-                      key={doctor.id}
+                      key={doctor._id}
                       doctor={doctor}
                       selectedDoctor={selectedDoctor}
                       setSelectedDoctor={setSelectedDoctor} // ✅ correct
@@ -169,7 +168,7 @@ const Modal = ({ open, setOpen }) => {
 
                 <div className="flex justify-end mt-4">
                   <button
-                   onClick={handleCancel}
+                    onClick={handleCancel}
                     disabled={!selectedDoctor}
                     className="btn  btn-sm text-black outline outline-gray-400 px-5"
                   >

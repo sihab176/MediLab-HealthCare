@@ -15,7 +15,7 @@
 
 //! ------------------------------------- updated code ----------------------->
 import dbConnect from "@/lib/dbConnect";
-// import bcrypt from "bcrypt";
+import bcrypt from "bcrypt";
 
 export const LoginUser = async (payload) => {
   const { email, password } = payload;
