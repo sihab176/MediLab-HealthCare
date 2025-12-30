@@ -24,7 +24,7 @@ const ReviewSection = ({ doctorId }) => {
   useEffect(() => {
     const reviewFun = async () => {
       const response = await fetch(
-        "http://localhost:3000/api/feedbackReviews",
+        "https://medilab-healthcare.vercel.app/api/feedbackReviews",
         {
           cache: "no-cache",
         }

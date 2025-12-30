@@ -15,9 +15,12 @@ const DoctorManagement = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/allDoctors`, {
-          cache: "no-store",
-        });
+        const res = await fetch(
+          `https://medilab-healthcare.vercel.app/api/allDoctors`,
+          {
+            cache: "no-store",
+          }
+        );
 
         if (!res.ok) {
           throw new Error("Failed to fetch doctors");

@@ -14,9 +14,12 @@ const BloodBankDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/add-blood`, {
-          cache: "no-store",
-        });
+        const res = await fetch(
+          `https://medilab-healthcare.vercel.app/api/add-blood`,
+          {
+            cache: "no-store",
+          }
+        );
 
         if (!res.ok) {
           throw new Error("Failed to fetch doctors");

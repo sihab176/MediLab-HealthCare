@@ -16,9 +16,12 @@ const ReviewTable = () => {
   // 🔹 Fetch reviews
   useEffect(() => {
     const reviewFun = async () => {
-      const res = await fetch("http://localhost:3000/api/feedbackReviews", {
-        cache: "no-cache",
-      });
+      const res = await fetch(
+        "https://medilab-healthcare.vercel.app/api/feedbackReviews",
+        {
+          cache: "no-cache",
+        }
+      );
       const data = await res.json();
       setReviewData(data);
     };

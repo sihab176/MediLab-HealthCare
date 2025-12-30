@@ -19,16 +19,19 @@ const BloodRequestTable = () => {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      const res = await fetch("http://localhost:3000/api/book-blood", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json", // ✅ fixed
-        },
-        body: JSON.stringify({
-          id: id, // ✅ key name correct
-          status: newStatus, // ✅ backend expects "status"
-        }),
-      });
+      const res = await fetch(
+        "https://medilab-healthcare.vercel.app/api/book-blood",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json", // ✅ fixed
+          },
+          body: JSON.stringify({
+            id: id, // ✅ key name correct
+            status: newStatus, // ✅ backend expects "status"
+          }),
+        }
+      );
 
       const data = await res.json();
 

@@ -350,7 +350,7 @@ const DoctorAddForm = () => {
             <div className="flex justify-end pt-6">
               <button
                 type="submit"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center gap-2 text-lg font-semibold shadow-lg hover:shadow-xl"
+                className="bg-blue-600  text-white px-8 py-3 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center gap-2 text-lg font-semibold shadow-lg hover:shadow-xl"
               >
                 Book Appointment
               </button>

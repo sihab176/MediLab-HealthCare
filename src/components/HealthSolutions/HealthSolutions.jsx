@@ -1,5 +1,7 @@
+"use client"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Link from "next/link";
 import { useEffect } from "react";
 import { FaBone, FaTooth, FaBrain, FaHeartbeat } from "react-icons/fa";
 import { GiPelvisBone } from "react-icons/gi";
@@ -67,7 +69,7 @@ const HealthSolutions = () => {
   }, []);
 
   return (
-    <section className="bg-gradient-to-b from-blue-50 to-white py-20 px-6">
+    <section className="bg-white py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* HEADER */}
         <div className="hs-header flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-14">
@@ -85,9 +87,9 @@ const HealthSolutions = () => {
             equipment, and patient-focused services.
           </p>
 
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-blue-700 transition">
+          <Link href="/ai_doctor" className="bg-blue-600 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-blue-700 transition">
             More Department
-          </button>
+          </Link>
         </div>
 
         {/* CARDS */}

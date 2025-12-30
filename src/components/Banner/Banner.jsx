@@ -1,6 +1,7 @@
 "use client";
 import gsap from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect } from "react";
 
 
@@ -70,7 +71,7 @@ const Banner = () => {
         className={`relative -top-3 w-full min-h-screen bg-white overflow-hidden pt-0 `}
       >
         <div
-          className="absolute p-0 m-0 top-0 right-0 h-full w-[50%] bg-[#DAEFFF] -z-0 hidden lg:block"
+          className="absolute p-0 m-0 top-0 right-0 h-full w-[50%] bg-[#DAEFFF] z-0 hidden lg:block"
           style={{
             // This clip-path creates a slight slant or 'cut' into the shape
             clipPath: "polygon(15% 0, 100% 0, 100% 100%, 0% 100%)",
@@ -112,12 +113,12 @@ const Banner = () => {
 
             {/* Buttons */}
             <div className="mt-8 flex flex-wrap gap-4">
-              <button className="btn_1 opacity-0 px-8 py-3 bg-[#0089FF] text-white font-medium rounded-md shadow-lg shadow-blue-500/30 hover:bg-[#087de4] transition-all">
+              <Link href="/ai_doctor" className="btn_1 opacity-0 px-8 py-3 bg-[#0089FF] text-white font-medium rounded-md shadow-lg shadow-blue-500/30 hover:bg-[#087de4] transition-all">
                 Schedule Appointment
-              </button>
-              <button className="btn_2 opacity-0 px-8 py-3 bg-transparent border border-gray-300 text-gray-600 font-medium rounded-md hover:border-gray-400 hover:bg-gray-50 transition-all">
+              </Link>
+              <Link href="/OurTeam" className="btn_2 opacity-0 px-8 py-3 bg-transparent border border-gray-300 text-gray-600 font-medium rounded-md hover:border-gray-400 hover:bg-gray-50 transition-all">
                 Learn More
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -128,9 +129,10 @@ const Banner = () => {
                 src="/bannerImage.png"
                 alt="Doctor giving thumbs up"
                 fill
-                className="doctor_image object-contain object-bottom lg:object-right-bottom scale-90 lg:scale-100"
+                className="doctor_image object-contain object-bottom  scale-90 lg:scale-100"
                 priority
               />
+              {/* lg:object-right-bottom */}
             </div>
           </div>
         </div>

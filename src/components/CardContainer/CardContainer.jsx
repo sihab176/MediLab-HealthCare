@@ -2,9 +2,12 @@ import React from "react";
 import Cards from "./Cards";
 
 export const fetchData = async () => {
-  const res = await fetch(`http://localhost:3000/api/allDoctors`, {
-    cache: "no-store", // optional
-  });
+  const res = await fetch(
+    `https://medilab-healthcare.vercel.app/api/allDoctors`,
+    {
+      cache: "no-store", // optional
+    }
+  );
 
   if (!res.ok) {
     throw new Error(

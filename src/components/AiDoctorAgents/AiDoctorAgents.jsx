@@ -80,12 +80,12 @@ const AiDoctorAgents = () => {
         {/* SEARCH BOX */}
         <div className="mb-4">
           <label className="font-semibold text-gray-600">Search</label>
-          <div className="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded mt-1">
+          <div className="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded mt-1 border-2 border-gray-400 text-gray-800 focus-within:border-[#4161a3] focus-within:ring-2 focus-within:ring-blue-200 transition-all">
             <FiSearch className="text-gray-500" />
             <input
               type="text"
               placeholder="Doctor name..."
-              className="bg-transparent outline-none w-full"
+              className="bg-transparent outline-none w-full "
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -95,7 +95,7 @@ const AiDoctorAgents = () => {
         {/* LOCATION */}
         <div className="mb-6">
           <label className="font-semibold text-gray-600">Location</label>
-          <div className="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded mt-1">
+          <div className="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded mt-1 border-2 border-gray-400 text-gray-800 focus-within:border-[#4161a3] focus-within:ring-2 focus-within:ring-blue-200 transition-all">
             <FiMapPin className="text-gray-500" />
             <input
               type="text"
@@ -111,7 +111,7 @@ const AiDoctorAgents = () => {
         <div className="mb-6">
           <p className="font-semibold text-gray-600 mb-2">Specialization</p>
           <select
-            className="select select-bordered w-full rounded"
+            className="select select-bordered w-full rounded bg-white border-2 border-gray-400  text-gray-800  focus:outline-none focus:border-[#4161a3] focus:ring-2 focus:ring-blue-200 transition-all "
             value={specialization}
             onChange={(e) => setSpecialization(e.target.value)}
           >
@@ -130,7 +130,7 @@ const AiDoctorAgents = () => {
         <div className="mb-6">
           <p className="font-semibold text-gray-600 mb-2">Sort</p>
           <select
-            className="select select-bordered w-full rounded"
+            className="select select-bordered w-full rounded bg-white border-2 border-gray-400  text-gray-800  focus:outline-none focus:border-[#4161a3] focus:ring-2 focus:ring-blue-200 transition-all"
             value={sort}
             onChange={(e) => setSort(e.target.value)}
           >
