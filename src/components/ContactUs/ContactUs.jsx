@@ -2,45 +2,10 @@
 import gsap from "gsap";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import ContactForm from "./_components/ContactForm";
 
 const ContactUs = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = () => {
-    console.log("Form submitted:", formData);
-
-    try {
-      const handleFunc = async () => {
-        const res = await fetch("/api/message", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
-        const data = await res.json();
-        toast.success("Meassage sent successfully");
-        console.log("data post", data);
-      };
-      handleFunc();
-    } catch (error) {
-      console.log(error);
-    }
-
-    setFormData({ name: "", email: "", message: "" });
-  };
   useEffect(() => {
     gsap.fromTo(
       ".number_one",
@@ -116,7 +81,7 @@ const ContactUs = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen ">
       {/* Hero Section with Doctor Image */}
       <div className="relative bg-gray-200">
         <div className="grid md:grid-cols-2 gap-0">
@@ -137,13 +102,14 @@ const ContactUs = () => {
                 <div>
                   <a
                     href="tel:001-234-5678"
-                    className="number_one text-3xl md:text-4xl font-bold text-gray-800 hover:text-blue-600 transition-colors block"
+                    className="number_one text-3xl md:text-4xl font-bold text-gray-800 hover:text-blue-600 transition-colors "
                   >
                     001-234-5678
                   </a>
+                  <br />
                   <a
                     href="tel:001-987-7654"
-                    className="number_two text-3xl md:text-4xl font-bold text-gray-800 hover:text-blue-600 transition-colors block"
+                    className="number_two text-3xl md:text-4xl font-bold text-gray-800 hover:text-blue-600 transition-colors "
                   >
                     001-987-7654
                   </a>
@@ -279,74 +245,7 @@ const ContactUs = () => {
       </div>
 
       {/* Contact Form Section */}
-      <div className="max-w-4xl mx-auto px-6 py-16 text-sm">
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Get In Touch
-            </h2>
-            <p className="text-gray-600">
-              Have a question? Send us a message and we'll respond as soon as
-              possible.
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {/* Name Input */}
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter your name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-              />
-            </div>
-
-            {/* Email Input */}
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
-              />
-            </div>
-
-            {/* Message Textarea */}
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">
-                Message
-              </label>
-              <textarea
-                name="message"
-                placeholder="Type your message here..."
-                value={formData.message}
-                onChange={handleChange}
-                rows="6"
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition-colors resize-none"
-              ></textarea>
-            </div>
-
-            {/* Submit Button */}
-            <button
-              onClick={handleSubmit}
-              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              Send Message
-            </button>
-          </div>
-        </div>
-      </div>
+      <ContactForm/>
     </div>
   );
 };

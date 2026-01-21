@@ -8,10 +8,11 @@ import React, { useEffect, useRef, useState } from "react";
 const Navbar = () => {
   const pathname = usePathname();
   const { data: session, status } = useSession();
+ 
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // বাইরে ক্লিক করলে dropdown বন্ধ হবে
+
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -23,7 +24,7 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  console.log("env file",process.env.NEXTAUTH_SECRET);
+  console.log("env file", process.env.NEXTAUTH_SECRET);
   const links = (
     <>
       <li
@@ -76,7 +77,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar  shadow-sm bg-[#caf0f8] lg:px-6 ">
+      <div className="navbar  shadow-sm bg-[#caf0f8] lg:px-10 py-3 ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -120,25 +121,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             {links}
-            {/* toggle =================*/}
-            {/* <div className="mr-8">
-              <label
-                htmlFor="Toggle1"
-                className="inline-flex items-center space-x-4 cursor-pointer"
-              >
-                <span className="relative">
-                  <input
-                    id="Toggle1"
-                    type="checkbox"
-                    onChange={switchTheme}
-                    checked={isDark}
-                    className="hidden peer"
-                  />
-                  <div className="w-10 h-6 bg-gray-300 rounded-full shadow-inner peer-checked:bg-violet-600 transition-all duration-300"></div>
-                  <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 bg-white rounded-full shadow peer-checked:translate-x-4 transition-all duration-300"></div>
-                </span>
-              </label>
-            </div> */}
+
           </ul>
         </div>
         <div className="navbar-end">
@@ -148,18 +131,30 @@ const Navbar = () => {
               <Image
                 src={session?.user?.image || "/user.png"}
                 alt="user_logo"
-                width={40}
-                height={40}
-                className="object-cover rounded-full cursor-pointer"
+                width={44}
+                height={44}
+                className="object-cover rounded-full cursor-pointer border-2 border-blue-900"
                 onClick={() => setOpen(!open)}
               />
 
               {/* Dropdown */}
               {open && (
-                <div className="absolute right-0 mt-2 w-40 bg-white  rounded-lg shadow-lg z-50">
+                <div className="absolute right-0 mt-2 w-64 px-3 bg-blue-200/40 backdrop-blur-sm  py-4  rounded shadow-2xl z-50">
+                  <div className="flex items-center gap-5 border-b border-gray-400 pb-3  ">
+                    <Image
+                      src={session?.user?.image || "/user.png"}
+                      alt="user_logo"
+                      width={40}
+                      height={40}
+                      className="object-cover rounded-full  cursor-pointer border-2 border-blue-900"
+                      onClick={() => setOpen(!open)}
+                    />
+                    <h1 className="text-center line-clamp-2 text-xl text-gray-800 "> {session?.user?.name}</h1>
+                  </div>
+                  <h2 className="text-center cursor-pointer line-clamp-2 text-gray-500 py-3 border-b border-gray-400 "> {session?.user?.email}</h2>
                   <button
                     onClick={() => signOut()}
-                    className="w-full btn border-0 text-left px-4 py-2 text-sm hover:bg-gray-100 rounded-lg"
+                    className="w-full bg-red-400 hover:opacity-80  border-0 text-left px-4 py-2  text-sm btn mt-5"
                   >
                     Sign Out
                   </button>
@@ -167,19 +162,13 @@ const Navbar = () => {
               )}
             </div>
           ) : (
-            // <button
-            //   onClick={() => signOut()}
-            //   className="btn btn-sm bg-sky-700 border-0 mx-2 text-white"
-            // >
-            //   Log out
-            // </button>
             <Link href="/login">
               <button className="btn btn-sm bg-sky-700 border-0 text-white">
                 Login
               </button>
             </Link>
           )}
-          {/* image */}
+        
         </div>
       </div>
     </div>

@@ -33,13 +33,14 @@ const LoginPage = () => {
 
   return (
     <section className="flex justify-center items-center  bg-gray-100 h-dvh">
-      <div className="w-full max-w-md px-8 py-24  space-y-3  border-6 border-white  bg-white/60  rounded-[40px]  shadow-2xl ">
+      <div className="w-full max-w-md px-8 py-24    border-6 border-white  bg-[#caf0f8]  rounded-[40px]  shadow-2xl ">
         <h1 className="text-4xl font-semibold text-center text-sky-400">
-          Sign In{" "}
+          Welcome Back
         </h1>
+        <p className="text-center text-sm text-gray-400">Sign in to your account</p>
         <form onSubmit={handleSubmit} className="space-y-3">
           <div className="space-y-1 text-sm">
-            <label htmlFor="username" className="block dark:text-gray-600">
+            <label  >
               Email
             </label>
             <input
@@ -51,7 +52,8 @@ const LoginPage = () => {
           </div>
 
           <div className="space-y-1 text-sm">
-            <label htmlFor="password" className="block dark:text-gray-600">
+            
+            <label >
               Password
             </label>
             <input
@@ -61,35 +63,34 @@ const LoginPage = () => {
               placeholder="Password"
               className="w-full px-4 py-2 rounded border border-gray-400"
             />
-            <div className="flex justify-end text-xs dark:text-gray-600">
+            <div className="flex justify-end text-xs text-gray-600">
               <a rel="noopener noreferrer" href="#">
                 Forgot Password?
               </a>
             </div>
           </div>
           <button
-            className="block w-full p-3 text-center rounded-sm bg-sky-500"
-            fdprocessedid="p6vw3g"
+            className=" w-full p-3 text-center rounded-sm bg-sky-700 hover:opacity-80 text-white"
           >
             Sign in
           </button>
         </form>
         <div className="flex items-center pt-4 space-x-1">
-          <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
-          <p className="px-3 text-sm dark:text-gray-600">
+          <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
+          <p className="px-3 text-sm text-gray-600">
             Login with social accounts
           </p>
-          <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
+          <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
         </div>
         <div className="flex justify-center ">
           <SocialLogin/>
         </div>
-        <p className="text-xs mt-10 text-center sm:px-6 dark:text-gray-600">
+        <p className="text-xs mt-10 text-center sm:px-6 text-gray-600">
           Don't have an account?
           <Link
             rel="noopener noreferrer"
             href="/register"
-            className="underline dark:text-blue-600"
+            className="underline text-blue-600"
           >
             Sign up
           </Link>

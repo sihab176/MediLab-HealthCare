@@ -36,13 +36,13 @@ const registerPage = () => {
 
   return (
     <section className="flex justify-center items-center bg-gray-100 h-dvh">
-      <div className="w-full max-w-md px-8 py-18  space-y-3  border-6 border-white  bg-white/60  rounded-[40px]  shadow-2xl  ">
+      <div className="w-full max-w-md px-8 py-18   border-6 border-white  bg-[#caf0f8]  rounded-[40px]  shadow-2xl  ">
         <h1 className="text-4xl font-semibold text-center text-sky-400">
           Sign up
         </h1>
         <form onSubmit={handleSubmit} className="space-y-3">
           <div className="space-y-1 text-sm">
-            <label htmlFor="username" className="block dark:text-gray-600">
+            <label htmlFor="username" className=" dark:text-gray-600">
               Username
             </label>
             <input
@@ -54,7 +54,7 @@ const registerPage = () => {
             />
           </div>
           <div className="space-y-1 text-sm">
-            <label htmlFor="username" className="block dark:text-gray-600">
+            <label htmlFor="username" className=" dark:text-gray-600">
               Email
             </label>
             <input
@@ -68,20 +68,20 @@ const registerPage = () => {
 
           <div className=" gap-4">
             <div className="flex-1">
-              <label className="block text-gray-700">Mobile Number</label>
+              <label className=" text-gray-700">Mobile Number</label>
               {/* test mobile */}
               <PhoneInput
                 country={"bd"} // ডিফল্ট দেশ বাংলাদেশ
                 value={phone}
                 onChange={setPhone}
-                inputStyle={{ width: "380px" }}
-                className="bg-[#caf0f8]"
+                inputStyle={{ width: "370px",height:"37px" ,border:"none" } }
+                className="bg-[#caf0f8] border border-gray-400 rounded"
               />
             </div>
           </div>
 
           <div className="space-y-1 text-sm">
-            <label htmlFor="password" className="block dark:text-gray-600">
+            <label htmlFor="password" className=" dark:text-gray-600">
               Password
             </label>
             <input
@@ -99,13 +99,13 @@ const registerPage = () => {
             </div>
           </div>
           <button
-            className="block w-full p-3 text-center rounded-sm bg-sky-500 btn border-none"
+            className=" w-full p-3 text-center rounded-sm bg-sky-700 hover:opacity-80 btn border-none"
             fdprocessedid="p6vw3g"
           >
             Sign up
           </button>
         </form>
-        <div className="flex items-center pt-4 space-x-1">
+        <div className="flex items-center mt-3 space-x-1">
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
           <p className="px-3 text-sm dark:text-gray-600">
             Login with social accounts
